@@ -13,13 +13,13 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		177B7E691ADD33CDA991FD0A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 6C4412F3F5286961BFB08CFF /* PrivacyInfo.xcprivacy */; };
+		2EC5AC7804074C88956531D8 /* AlbertSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFDE9953F93346F6A2F2CED9 /* AlbertSans-Medium.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-TestHollyWater-TestHollyWaterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-TestHollyWater-TestHollyWaterTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		830EE43C66E449FEA7762A86 /* AlbertSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB3A44A2A28A477B9DDBEC68 /* AlbertSans-ExtraBold.ttf */; };
-		2EC5AC7804074C88956531D8 /* AlbertSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFDE9953F93346F6A2F2CED9 /* AlbertSans-Medium.ttf */; };
+		BCBF9F5869BB4516A46067EA /* georgia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3B4513EF13940708C7B26FB /* georgia.ttf */; };
 		DD7FFC620A374526A59D113E /* AlbertSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDCD631B51EB4C748FF68BBE /* AlbertSans-Regular.ttf */; };
 		E0834C0D374446829E5B0277 /* AlbertSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8ECE1C0D31EB43BE8C40E1B4 /* AlbertSans-SemiBold.ttf */; };
-		BCBF9F5869BB4516A46067EA /* georgia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3B4513EF13940708C7B26FB /* georgia.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,12 +51,12 @@
 		6C4412F3F5286961BFB08CFF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = TestHollyWater/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = TestHollyWater/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-TestHollyWater-TestHollyWaterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestHollyWater-TestHollyWaterTests.release.xcconfig"; path = "Target Support Files/Pods-TestHollyWater-TestHollyWaterTests/Pods-TestHollyWater-TestHollyWaterTests.release.xcconfig"; sourceTree = "<group>"; };
+		8ECE1C0D31EB43BE8C40E1B4 /* AlbertSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "AlbertSans-SemiBold.ttf"; path = "../assets/fonts/AlbertSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		C3B4513EF13940708C7B26FB /* georgia.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = georgia.ttf; path = ../assets/fonts/georgia.ttf; sourceTree = "<group>"; };
+		CB3A44A2A28A477B9DDBEC68 /* AlbertSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "AlbertSans-ExtraBold.ttf"; path = "../assets/fonts/AlbertSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		DFDE9953F93346F6A2F2CED9 /* AlbertSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "AlbertSans-Medium.ttf"; path = "../assets/fonts/AlbertSans-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		CB3A44A2A28A477B9DDBEC68 /* AlbertSans-ExtraBold.ttf */ = {isa = PBXFileReference; name = "AlbertSans-ExtraBold.ttf"; path = "../assets/fonts/AlbertSans-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DFDE9953F93346F6A2F2CED9 /* AlbertSans-Medium.ttf */ = {isa = PBXFileReference; name = "AlbertSans-Medium.ttf"; path = "../assets/fonts/AlbertSans-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EDCD631B51EB4C748FF68BBE /* AlbertSans-Regular.ttf */ = {isa = PBXFileReference; name = "AlbertSans-Regular.ttf"; path = "../assets/fonts/AlbertSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8ECE1C0D31EB43BE8C40E1B4 /* AlbertSans-SemiBold.ttf */ = {isa = PBXFileReference; name = "AlbertSans-SemiBold.ttf"; path = "../assets/fonts/AlbertSans-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C3B4513EF13940708C7B26FB /* georgia.ttf */ = {isa = PBXFileReference; name = "georgia.ttf"; path = "../assets/fonts/georgia.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EDCD631B51EB4C748FF68BBE /* AlbertSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "AlbertSans-Regular.ttf"; path = "../assets/fonts/AlbertSans-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +153,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B963A50C588147F6AF7DB213 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CB3A44A2A28A477B9DDBEC68 /* AlbertSans-ExtraBold.ttf */,
+				DFDE9953F93346F6A2F2CED9 /* AlbertSans-Medium.ttf */,
+				EDCD631B51EB4C748FF68BBE /* AlbertSans-Regular.ttf */,
+				8ECE1C0D31EB43BE8C40E1B4 /* AlbertSans-SemiBold.ttf */,
+				C3B4513EF13940708C7B26FB /* georgia.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,19 +176,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		B963A50C588147F6AF7DB213 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				CB3A44A2A28A477B9DDBEC68 /* AlbertSans-ExtraBold.ttf */,
-				DFDE9953F93346F6A2F2CED9 /* AlbertSans-Medium.ttf */,
-				EDCD631B51EB4C748FF68BBE /* AlbertSans-Regular.ttf */,
-				8ECE1C0D31EB43BE8C40E1B4 /* AlbertSans-SemiBold.ttf */,
-				C3B4513EF13940708C7B26FB /* georgia.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
