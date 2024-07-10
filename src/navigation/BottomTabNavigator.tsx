@@ -31,7 +31,7 @@ export const BottomTabNavigator = () => {
         tabBarStyle: {
           height: Platform.OS === 'ios' ? 80 : 70,
           backgroundColor: colors.white,
-          position: 'absolute',
+          // position: 'absolute',
           borderWidth: 1,
           borderColor: colors.lightGray,
           display: handleDisplayTabs(route),

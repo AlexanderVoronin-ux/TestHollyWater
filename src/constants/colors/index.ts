@@ -15,7 +15,7 @@ export const colors = {
   red_4: '#fda9a9',
   yellow: '#f5c71a',
   black: '#0E0E16',
-  lightGray: '#f0f1f7',
+  lightGray: '#e3e4ea',
   pink: '#FFF0FB',
   gren: '#22c55d',
   transparency: '#00000000',
