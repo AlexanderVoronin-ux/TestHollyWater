@@ -61,13 +61,18 @@ export const MIDDLE_CARD_CTR = (
   marginLeft: index === 0 ? 20 : 0,
   marginRight: isLastItem ? 20 : 0,
 });
-export const TEXT_CTR: ViewStyle = {
-  borderRadius: 8,
-  borderWidth: 2,
-  borderColor: colors.white,
-  width: '100%',
-  padding: 10,
-};
+export const SMALL_CARD_CTR = (
+  index: number,
+  isLastItem: boolean,
+): ViewStyle => ({
+  width: 308,
+  flexDirection: 'row',
+  alignItems: 'center',
+  backgroundColor: colors.white,
+  shadowColor: colors.black,
+  marginTop: 12,
+  marginBottom: 20,
+});
 
 export const TITLE_TXT: TextStyle = {
   fontFamily: fonts.albertSansExtraBold,
@@ -82,6 +87,32 @@ export const TITLE_MIDDLE_TXT: TextStyle = {
   color: colors.black,
   lineHeight: 15,
   paddingVertical: 7,
+};
+export const TITLE_NUMBER_TXT: TextStyle = {
+  fontFamily: fonts.albertSansExtraBold,
+  fontSize: 38,
+  color: colors.lightGray_2,
+  lineHeight: 45,
+  paddingHorizontal: 24,
+};
+export const TITLE_SMALL_TXT_1: TextStyle = {
+  fontFamily: fonts.albertSansSemiBold,
+  fontSize: 12,
+  color: colors.purple,
+  lineHeight: 14,
+};
+export const TITLE_SMALL_TXT_2: TextStyle = {
+  fontFamily: fonts.albertSansSemiBold,
+  fontSize: 15,
+  color: colors.black,
+  lineHeight: 18,
+  paddingVertical: 3,
+};
+export const TITLE_SMALL_TXT_3: TextStyle = {
+  fontFamily: fonts.albertSansRegular,
+  fontSize: 13,
+  color: colors.lightGray_2,
+  lineHeight: 15,
 };
 export const HEADER_TXT = (isFirstItem: boolean): TextStyle => ({
   fontFamily: isFirstItem

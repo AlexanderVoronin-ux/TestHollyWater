@@ -1,30 +1,46 @@
 import React, {useCallback} from 'react';
 import {SectionList, SafeAreaView, ImageSourcePropType} from 'react-native';
+
 import {BOOKS_MOCK_DATA} from '../../constants/booksMockData.ts';
 import {HeaderComponent} from './components/HeaderComponent.tsx';
 import {SectionHeader} from './components/SectionHeader.tsx';
 import {LargeFlatComponent} from './components/LargeFlatComponent.tsx';
 import {MiddleFlatComponent} from './components/MiddleFlatComponent.tsx';
+import {SmallFlatComponent} from './components/SmallFlatComponent.tsx';
 import * as S from './styles.ts';
 
 export interface IBooksOption {
   id: number;
   img: ImageSourcePropType;
+  title?: string;
 }
 
 export const BooksScreen = () => {
   const renderItem = useCallback(
-    ({item, id}: {item: IBooksOption[]; id: number}) => {
+    ({
+      item,
+      type,
+      additionalMargin,
+    }: {
+      item: IBooksOption[] | IBooksOption[][];
+      type: string;
+      additionalMargin: number | undefined;
+    }) => {
       return (
         <>
-          {id === 1 && <LargeFlatComponent items={item} />}
-          {id === 2 && <MiddleFlatComponent items={item} />}
-          {id === 3 && (
-            <MiddleFlatComponent items={item} additionalMargin={116} />
+          {type === 'large' && <LargeFlatComponent items={item} />}
+          {type === 'middle' && (
+            <MiddleFlatComponent
+              items={item}
+              additionalMargin={additionalMargin}
+            />
           )}
-          {id === 4 && <MiddleFlatComponent items={item} />}
-          {id === 6 && <MiddleFlatComponent items={item} />}
-          {id === 7 && <MiddleFlatComponent items={item} />}
+          {type === 'small' && (
+            <SmallFlatComponent
+              items={item}
+              additionalMargin={additionalMargin}
+            />
+          )}
         </>
       );
     },
@@ -41,13 +57,17 @@ export const BooksScreen = () => {
           item,
           section,
         }: {
-          item: IBooksOption[];
-          section: {id: number};
+          item: IBooksOption[] | IBooksOption[][];
+          section: {type: string; additionalMargin?: number; title: string};
         }) => {
-          return renderItem({item, id: section.id});
+          return renderItem({
+            item,
+            type: section.type,
+            additionalMargin: section.additionalMargin,
+          });
         }}
-        renderSectionHeader={({section: {title, id}}) => (
-          <SectionHeader title={title} id={id} />
+        renderSectionHeader={({section: {title}}) => (
+          <SectionHeader title={title} />
         )}
         stickySectionHeadersEnabled
         showsVerticalScrollIndicator={false}

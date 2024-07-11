@@ -16,7 +16,8 @@ export const colors = {
   yellow: '#f5c71a',
   black: '#0E0E16',
   lightGray: '#e3e4ea',
+  lightGray_2: '#848694',
   pink: '#FFF0FB',
-  gren: '#22c55d',
+  green: '#22c55d',
   transparency: '#00000000',
 };

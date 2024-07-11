@@ -1,6 +1,7 @@
 export const BOOKS_MOCK_DATA = [
   {
     id: 1,
+    type: 'large',
     title: 'Special Event',
     data: [
       [
@@ -12,6 +13,7 @@ export const BOOKS_MOCK_DATA = [
   },
   {
     id: 2,
+    type: 'middle',
     title: 'Trending Now',
     data: [
       [
@@ -40,7 +42,9 @@ export const BOOKS_MOCK_DATA = [
   },
   {
     id: 3,
+    type: 'middle',
     title: 'Romance',
+    additionalMargin: 116,
     data: [
       [
         {
@@ -68,6 +72,7 @@ export const BOOKS_MOCK_DATA = [
   },
   {
     id: 4,
+    type: 'middle',
     title: 'Billionaire',
     data: [
       [
@@ -95,7 +100,70 @@ export const BOOKS_MOCK_DATA = [
     ],
   },
   {
+    id: 5,
+    type: 'small',
+    title: 'Top Series',
+    additionalMargin: 92,
+    data: [
+      [
+        [
+          {
+            id: 1,
+            img: require('../../assets/images/TopSeries_1.png'),
+            title: 'Man of Her Dreams',
+          },
+          {
+            id: 2,
+            img: require('../../assets/images/TopSeries_2.png'),
+            title: 'Fall for Dylan Lemiere',
+          },
+          {
+            id: 3,
+            img: require('../../assets/images/TopSeries_3.png'),
+            title: 'Not in the Contact',
+          },
+        ],
+        [
+          {
+            id: 1,
+            img: require('../../assets/images/TopSeries_3.png'),
+            title: 'Not in the Contact',
+          },
+          {
+            id: 2,
+            img: require('../../assets/images/TopSeries_1.png'),
+            title: 'Last Enchantment',
+          },
+          {
+            id: 3,
+            img: require('../../assets/images/TopSeries_5.png'),
+            title: "The Alpha Demon's Kidnapped Mate",
+          },
+        ],
+        [
+          {
+            id: 1,
+            img: require('../../assets/images/TopSeries_5.png'),
+            title: "The Alpha Demon's Kidnapped Mate",
+          },
+          {
+            id: 2,
+            img: require('../../assets/images/TopSeries_3.png'),
+            title: 'Last Enchantment',
+          },
+          {
+            id: 3,
+            img: require('../../assets/images/TopSeries_1.png'),
+            title: "The Alpha Demon's Kidnapped Mate",
+          },
+        ],
+      ],
+    ],
+  },
+
+  {
     id: 6,
+    type: 'middle',
     title: 'Authors You Might Know',
     data: [
       [
@@ -124,6 +192,7 @@ export const BOOKS_MOCK_DATA = [
   },
   {
     id: 7,
+    type: 'middle',
     title: 'Top romance',
     data: [
       [
