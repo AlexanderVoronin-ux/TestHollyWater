@@ -24,5 +24,6 @@ export type BottomTabParamList = {
 };
 export type ArticlesStackList = {
   [DiscoverStack.BooksScreen]: undefined;
-  [DiscoverStack.ContentScreen]: {content: IBooksOption};
+  [DiscoverStack.ContentScreen]: undefined;
+  // [DiscoverStack.ContentScreen]: {content: IBooksOption};
 };

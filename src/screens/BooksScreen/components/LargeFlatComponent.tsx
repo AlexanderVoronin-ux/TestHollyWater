@@ -7,6 +7,12 @@ import {
 import React, {useCallback} from 'react';
 
 import * as S from '../styles.ts';
+import {useNavigation} from '@react-navigation/native';
+import {
+  ArticlesStackList,
+  DiscoverStack,
+} from '../../../navigation/constants.ts';
+import {StackNavigationProp} from '@react-navigation/stack';
 
 type TItems = {
   id: number;
@@ -18,6 +24,8 @@ export interface ISpecialEvent {
 }
 
 export const LargeFlatComponent = ({items}: ISpecialEvent) => {
+  const navigation = useNavigation<StackNavigationProp<ArticlesStackList>>();
+
   const lastItemIndex = items.length - 1;
 
   const renderItem = useCallback(
@@ -26,7 +34,7 @@ export const LargeFlatComponent = ({items}: ISpecialEvent) => {
       const isLastItem = lastItemIndex === index;
       return (
         <TouchableOpacity
-          onPress={() => {}}
+          onPress={() => navigation.navigate(DiscoverStack.ContentScreen)}
           style={S.CARD_CTR(index, isLastItem)}>
           <Image source={img} width={328} height={208} />
         </TouchableOpacity>
