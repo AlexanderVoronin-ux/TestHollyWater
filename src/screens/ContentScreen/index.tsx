@@ -121,6 +121,7 @@ export const ContentScreen = () => {
           },
         )}
         snapToInterval={SCREEN_WIDTH}
+        disableIntervalMomentum={true}
         onMomentumScrollEnd={event => {
           const {contentOffset} = event.nativeEvent;
           const index = Math.round(contentOffset.x / SCREEN_WIDTH);
