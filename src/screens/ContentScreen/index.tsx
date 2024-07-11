@@ -14,9 +14,12 @@ import RenderHtml from 'react-native-render-html';
 import {s_Content} from '../../store/selectors';
 import {SCREEN_WIDTH} from '../../constants/screenSizes.ts';
 import {BottomTabActions} from './components/BottomTabActions.tsx';
-import * as S from './styles';
 import {useAppDispatch} from '../../store';
 import {setChapterNumber} from '../../store/reducers';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {ArticlesStackList} from '../../navigation/constants.ts';
+import * as S from './styles';
 
 interface IContent {
   id: number;
@@ -26,8 +29,10 @@ interface IContent {
 export const ContentScreen = () => {
   const content = useSelector(s_Content);
   const dispatch = useAppDispatch();
+  const navigation = useNavigation<StackNavigationProp<ArticlesStackList>>();
+
   const [index, setIndex] = useState<number>(0);
-  console.log('index', index);
+
   const scrollX = useRef(new Animated.Value(0)).current;
   const isLastChapterIndex: boolean = index === content.length - 1;
 
@@ -49,10 +54,17 @@ export const ContentScreen = () => {
   };
 
   useEffect(() => {
-    listRef.current?.scrollToIndex({
-      index,
-      animated: true,
+    navigation.addListener('beforeRemove', e => {
+      dispatch(setChapterNumber(0));
     });
+  }, [navigation]);
+
+  useEffect(() => {
+    if (index >= 0)
+      listRef.current?.scrollToIndex({
+        index,
+        animated: true,
+      });
   }, [index]);
 
   const renderItem = useCallback(
