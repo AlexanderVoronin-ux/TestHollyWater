@@ -17,7 +17,7 @@ export interface IBooksOption {
 
 export const BooksScreen = () => {
   const renderItem = useCallback(
-    ({
+    <T extends IBooksOption[]>({
       item,
       type,
       additionalMargin,
@@ -28,16 +28,18 @@ export const BooksScreen = () => {
     }) => {
       return (
         <>
-          {type === 'large' && <LargeFlatComponent items={item} />}
+          {type === 'large' && (
+            <LargeFlatComponent items={item as IBooksOption[]} />
+          )}
           {type === 'middle' && (
             <MiddleFlatComponent
-              items={item}
+              items={item as IBooksOption[]}
               additionalMargin={additionalMargin}
             />
           )}
           {type === 'small' && (
             <SmallFlatComponent
-              items={item}
+              items={item as IBooksOption[][]}
               additionalMargin={additionalMargin}
             />
           )}
