@@ -8,6 +8,12 @@ import {
 import React, {useCallback} from 'react';
 
 import * as S from '../styles.ts';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {
+  ArticlesStackList,
+  DiscoverStack,
+} from '../../../navigation/constants.ts';
 
 type TItems = {
   id: number;
@@ -24,6 +30,8 @@ export const MiddleFlatComponent = ({
   items,
   additionalMargin,
 }: IMiddleFlatComponent) => {
+  const navigation = useNavigation<StackNavigationProp<ArticlesStackList>>();
+
   const lastItemIndex = items.length - 1;
 
   const renderItem = useCallback(
@@ -32,7 +40,7 @@ export const MiddleFlatComponent = ({
       const isLastItem = lastItemIndex === index;
       return (
         <TouchableOpacity
-          onPress={() => {}}
+          onPress={() => navigation.navigate(DiscoverStack.ContentScreen)}
           style={[
             S.MIDDLE_CARD_CTR(index, isLastItem),
             {marginBottom: additionalMargin},
