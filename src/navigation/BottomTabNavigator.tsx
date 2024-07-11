@@ -26,12 +26,12 @@ export const BottomTabNavigator = () => {
   };
   return (
     <Tab.Navigator
+      initialRouteName={BottomTabStack.DiscoverStackNavigator}
       screenOptions={({route}) => ({
         headerShown: false,
         tabBarStyle: {
           height: Platform.OS === 'ios' ? 80 : 70,
           backgroundColor: colors.white,
-          // position: 'absolute',
           borderWidth: 1,
           borderColor: colors.lightGray,
           display: handleDisplayTabs(route),
@@ -41,7 +41,7 @@ export const BottomTabNavigator = () => {
         tabBarHideOnKeyboard: true,
       })}>
       <Tab.Screen
-        options={({route}) => ({
+        options={() => ({
           title: '',
           tabBarIcon: ({focused}) => (
             <TabBarLabel focused={focused} iconName={'home'} />
@@ -61,7 +61,7 @@ export const BottomTabNavigator = () => {
         component={DiscoverStackNavigator}
       />
       <Tab.Screen
-        options={({route}) => ({
+        options={() => ({
           title: '',
           tabBarIcon: ({focused}) => (
             <TabBarLabel focused={focused} iconName={'label'} />
@@ -71,7 +71,7 @@ export const BottomTabNavigator = () => {
         component={LabelScreen}
       />
       <Tab.Screen
-        options={({route}) => ({
+        options={() => ({
           title: '',
           tabBarIcon: ({focused}) => (
             <TabBarLabel focused={focused} iconName={'profile'} />
