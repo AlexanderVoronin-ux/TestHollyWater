@@ -1,8 +1,9 @@
-import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
+import {Platform, Text, TouchableOpacity, View} from 'react-native';
 import {CommonActions, useNavigation} from '@react-navigation/native';
 import {ArticlesStackList, DiscoverStack} from '../../navigation/constants.ts';
 import {SVGIcon} from '../SVGIcon';
 import React from 'react';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {useSelector} from 'react-redux';
 import {s_chapterNumber} from '../../store/selectors';
@@ -14,9 +15,14 @@ export const CustomHeader = () => {
   const navigation = useNavigation<StackNavigationProp<ArticlesStackList>>();
   const chapterNumber = useSelector(s_chapterNumber);
   const dispatch = useAppDispatch();
+  const insets = useSafeAreaInsets();
 
   return (
-    <SafeAreaView style={S.SAFE_AREA_CTR}>
+    <View
+      style={[
+        S.SAFE_AREA_CTR,
+        {paddingTop: Platform.OS === 'ios' ? insets.top + 10 : insets.top + 20},
+      ]}>
       <TouchableOpacity
         onPress={() => {
           navigation.dispatch(
@@ -33,6 +39,6 @@ export const CustomHeader = () => {
         <Text style={S.TITLE_TXT}>{`Chapter ${chapterNumber + 1}`}</Text>
       </View>
       <View style={{width: 24, height: 24}} />
-    </SafeAreaView>
+    </View>
   );
 };
