@@ -35,6 +35,7 @@ export const BottomTabNavigator = () => {
           borderWidth: 1,
           borderColor: colors.lightGray,
           display: handleDisplayTabs(route),
+          paddingTop: Platform.OS === 'ios' ? 20 : 0,
         },
         tabBarActiveTintColor: colors.purple,
         tabBarInactiveTintColor: colors.black,
