@@ -6,7 +6,6 @@ import {
   ScrollView,
   Text,
   TouchableOpacity,
-  View,
 } from 'react-native';
 import {colors} from '../../constants';
 import {useSelector} from 'react-redux';
@@ -16,6 +15,8 @@ import {s_Content} from '../../store/selectors';
 import {SCREEN_WIDTH} from '../../constants/screenSizes.ts';
 import {BottomTabActions} from './components/BottomTabActions.tsx';
 import * as S from './styles';
+import {useAppDispatch} from '../../store';
+import {setChapterNumber} from '../../store/reducers';
 
 interface IContent {
   id: number;
@@ -24,8 +25,9 @@ interface IContent {
 
 export const ContentScreen = () => {
   const content = useSelector(s_Content);
+  const dispatch = useAppDispatch();
   const [index, setIndex] = useState<number>(0);
-
+  console.log('index', index);
   const scrollX = useRef(new Animated.Value(0)).current;
   const isLastChapterIndex: boolean = index === content.length - 1;
 
@@ -35,11 +37,15 @@ export const ContentScreen = () => {
     if (index === 0) {
       return null;
     }
-    return setIndex(prev => prev - 1);
+    setIndex(prev => prev - 1);
+    dispatch(setChapterNumber(index - 1));
   };
 
   const handleForward = () => {
-    if (!isLastChapterIndex) setIndex(prev => prev + 1);
+    if (!isLastChapterIndex) {
+      setIndex(prev => prev + 1);
+      dispatch(setChapterNumber(index + 1));
+    }
   };
 
   useEffect(() => {
@@ -50,7 +56,7 @@ export const ContentScreen = () => {
   }, [index]);
 
   const renderItem = useCallback(
-    ({item, index}: {item: IContent; index: number}) => {
+    ({item}: {item: IContent}) => {
       const source = {
         html: item.text,
       };
@@ -106,7 +112,10 @@ export const ContentScreen = () => {
         onMomentumScrollEnd={event => {
           const {contentOffset} = event.nativeEvent;
           const index = Math.round(contentOffset.x / SCREEN_WIDTH);
-          setIndex(index);
+          if (index >= 0) {
+            setIndex(index);
+            dispatch(setChapterNumber(index));
+          }
         }}
         decelerationRate={'normal'}
         style={{width: SCREEN_WIDTH}}

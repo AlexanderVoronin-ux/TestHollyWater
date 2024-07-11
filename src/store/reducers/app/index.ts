@@ -1,7 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-type TAppState = boolean;
-
 interface IContentPayload {
   id: number;
   text: string;
@@ -10,11 +8,13 @@ interface IContentPayload {
 interface IAppState {
   loading: boolean;
   content: IContentPayload[];
+  chapterNumber: number;
 }
 
 const initialState: IAppState = {
   loading: false,
   content: [],
+  chapterNumber: 0,
 };
 
 const appSlice = createSlice({
@@ -24,6 +24,9 @@ const appSlice = createSlice({
     setLoading(state, {payload}: PayloadAction<boolean>) {
       state.loading = payload;
     },
+    setChapterNumber(state, {payload}: PayloadAction<number>) {
+      state.chapterNumber = payload;
+    },
     updateContent(state, {payload}: PayloadAction<IContentPayload>) {
       let newArray = [];
       newArray.push(payload);
@@ -32,6 +35,6 @@ const appSlice = createSlice({
   },
 });
 
-export const {setLoading, updateContent} = appSlice.actions;
+export const {setLoading, updateContent, setChapterNumber} = appSlice.actions;
 
 export default appSlice.reducer;
