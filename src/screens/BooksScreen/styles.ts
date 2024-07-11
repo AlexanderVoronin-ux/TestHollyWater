@@ -1,4 +1,4 @@
-import {TextStyle, ViewStyle} from 'react-native';
+import {Platform, TextStyle, ViewStyle} from 'react-native';
 
 import {fonts, colors} from '../../constants';
 
@@ -15,7 +15,7 @@ export const HEADER_CTR: ViewStyle = {
 };
 export const SEARCH_CTR: ViewStyle = {
   alignItems: 'flex-end',
-  paddingVertical: 14,
+  paddingVertical: Platform.OS === 'ios' ? 0 : 14,
 };
 export const SECTION_HEADER_CTR = (isFirstItem: boolean): ViewStyle => ({
   width: '100%',
